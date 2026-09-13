@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brenda Jaqueline Pavez — Curriculum Vitae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6F2;
+    --paper:#FFFFFF;
+    --terracotta:#B9705A;
+    --terracotta-dark:#8C4E3D;
+    --blush:#F1DCD2;
+    --ink:#2B2521;
+    --ink-soft:#5C5049;
+    --line:#E7D9CF;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .page{
+    max-width:980px;
+    margin:0 auto;
+    padding:48px 24px 80px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    display:flex;
+    align-items:center;
+    gap:32px;
+    margin-bottom:56px;
+    flex-wrap:wrap;
+  }
+
+  .avatar{
+    width:132px;
+    height:132px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid var(--paper);
+    box-shadow:0 6px 24px rgba(140,78,61,0.18);
+    flex-shrink:0;
+    background:var(--blush);
+  }
+
+  .avatar-placeholder{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--terracotta-dark);
+    font-size:13px;
+    text-align:center;
+    padding:8px;
+  }
+
+  .heading-block h1{
+    font-family:'Fraunces', serif;
+    font-weight:400;
+    font-size:clamp(2.2rem, 5vw, 3rem);
+    margin:0 0 4px;
+    color:var(--terracotta-dark);
+  }
+
+  .heading-block .role{
+    margin:0 0 14px;
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    font-weight:500;
+  }
+
+  .contact-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+    font-size:0.95rem;
+  }
+
+  .contact-row a{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--terracotta);
+  }
+
+  .contact-row a:hover{ color:var(--terracotta-dark); }
+
+  /* ---------- Layout ---------- */
+  .layout{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:40px;
+    align-items:start;
+  }
+
+  aside, main{ min-width:0; }
+
+  .block{ margin-bottom:40px; }
+
+  .block h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.05rem;
+    letter-spacing:0.02em;
+    color:var(--paper);
+    background:var(--terracotta);
+    display:inline-block;
+    padding:6px 16px;
+    border-radius:3px;
+    margin:0 0 18px;
+  }
+
+  /* ---------- Sidebar ---------- */
+  .skill-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+
+  .skill-list li{
+    position:relative;
+    padding-left:26px;
+    margin-bottom:12px;
+    font-size:0.95rem;
+  }
+
+  .skill-list li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:3px;
+    width:16px;
+    height:16px;
+    border:2px solid var(--terracotta);
+    border-radius:4px;
+  }
+
+  .skill-list li::after{
+    content:"";
+    position:absolute;
+    left:4px;
+    top:6px;
+    width:8px;
+    height:4px;
+    border-left:2px solid var(--terracotta);
+    border-bottom:2px solid var(--terracotta);
+    transform:rotate(-45deg);
+  }
+
+  .edu-item{ margin-bottom:20px; }
+  .edu-item:last-child{ margin-bottom:0; }
+
+  .edu-item .title{
+    font-weight:600;
+    font-size:0.95rem;
+    margin-bottom:2px;
+  }
+
+  .edu-item .meta{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Main content ---------- */
+  .about-text{
+    font-size:1rem;
+    color:var(--ink-soft);
+    max-width:60ch;
+  }
+
+  .job{
+    padding-bottom:24px;
+    margin-bottom:24px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .job:last-child{
+    border-bottom:none;
+    margin-bottom:0;
+    padding-bottom:0;
+  }
+
+  .job-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:6px 16px;
+    margin-bottom:8px;
+  }
+
+  .job-head .role{
+    font-weight:600;
+    font-size:1rem;
+    color:var(--ink);
+  }
+
+  .job-head .dates{
+    font-size:0.85rem;
+    color:var(--terracotta-dark);
+    font-weight:500;
+    white-space:nowrap;
+  }
+
+  .job ul{
+    margin:0;
+    padding-left:20px;
+    color:var(--ink-soft);
+    font-size:0.95rem;
+  }
+
+  .job ul li{ margin-bottom:4px; }
+
+  .courses-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px 32px;
+  }
+
+  .course-item .title{
+    font-weight:600;
+    font-size:0.9rem;
+    margin-bottom:2px;
+  }
+
+  .course-item .meta{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+  }
+
+  footer{
+    margin-top:64px;
+    text-align:center;
+    font-size:0.8rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 720px){
+    .layout{ grid-template-columns:1fr; }
+    header{ flex-direction:column; text-align:center; }
+    .contact-row{ justify-content:center; }
+    .courses-grid{ grid-template-columns:1fr; }
+    .job-head{ flex-direction:column; align-items:flex-start; }
+  }
+
+  @media print{
+    body{ background:var(--paper); }
+    .page{ padding:0; max-width:none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <!-- Reemplazá el src de abajo por tu propia foto (por ejemplo "foto.jpg" en la misma carpeta) -->
+    <img class="avatar" src="foto.jpg" alt="Foto de Brenda Jaqueline Pavez"
+         onerror="this.style.display='flex'; this.classList.add('avatar-placeholder'); this.alt='Agregá tu foto como foto.jpg'; this.removeAttribute('src'); this.innerText='Tu foto acá';">
+    <div class="heading-block">
+      <h1>Brenda Jaqueline Pavez</h1>
+      <p class="role">Técnica en desarrollo de software (en formación)</p>
+      <div class="contact-row">
+        <a href="mailto:bjaquelinepavez@gmail.com">bjaquelinepavez@gmail.com</a>
+        <span>2804-571259</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <aside>
+      <div class="block">
+        <h2>Formación educativa</h2>
+        <div class="edu-item">
+          <div class="title">Secundario | Completo</div>
+          <div class="meta">2013 · Escuela 712 "Don Santiago Estrada"</div>
+        </div>
+        <div class="edu-item">
+          <div class="title">Tec. Universitario en Desarrollo de Software</div>
+          <div class="meta">2022 - Actualidad · Universidad del Chubut</div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>Habilidades</h2>
+        <ul class="skill-list">
+          <li>Lenguajes de programación (Python, C, C++, Java)</li>
+          <li>Paquete Office</li>
+          <li>Mantenimiento de software</li>
+          <li>Orden y mantenimiento de archivos, ficheros y documentos</li>
+          <li>Proactividad y creatividad</li>
+          <li>Responsabilidad y atención al detalle</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main>
+      <div class="block">
+        <h2>Sobre mí</h2>
+        <p class="about-text">
+          Soy una persona curiosa y proactiva, comprometida con el aprendizaje continuo en programación.
+          Me caracterizan la responsabilidad, la atención al detalle y un enfoque meticuloso en cada proyecto.
+          Disfruto asumir nuevos desafíos y mejorar constantemente para aportar soluciones de calidad.
+          Busco una oportunidad para contribuir y seguir creciendo en proyectos innovadores.
+        </p>
+      </div>
+
+      <div class="block">
+        <h2>Experiencia laboral</h2>
+
+        <div class="job">
+          <div class="job-head">
+            <span class="role">Secretaria — Simple Asociación Pelucas Oncológicas Chubut</span>
+            <span class="dates">18/06/2021 – 27/08/2021</span>
+          </div>
+          <ul>
+            <li>Gestión y aplicación de fondos nacionales</li>
+            <li>Confección de documentos</li>
+            <li>Seguimiento de expedientes</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <span class="role">Asesora Vendedora — Multigol</span>
+            <span class="dates">04/09/2019 – 04/01/2020</span>
+          </div>
+          <ul>
+            <li>Gestión de redes sociales</li>
+            <li>Atención al cliente</li>
+            <li>Descripciones de producto</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <span class="role">Cajera — La Anónima</span>
+            <span class="dates">07/12/2018 – 07/03/2019</span>
+          </div>
+          <ul>
+            <li>Atención al cliente</li>
+            <li>Cierre de cajas</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>Cursos y certificaciones</h2>
+        <div class="courses-grid">
+          <div class="course-item">
+            <div class="title">Diplomatura en Programación</div>
+            <div class="meta">Universidad del Chubut · en curso</div>
+          </div>
+          <div class="course-item">
+            <div class="title">Seguridad en Mikrotik</div>
+            <div class="meta">Universidad del Chubut · 2024, 12 hs</div>
+          </div>
+          <div class="course-item">
+            <div class="title">Python</div>
+            <div class="meta">Santander Open Academy · 2024, 8 hs</div>
+          </div>
+          <div class="course-item">
+            <div class="title">Introducción, Programación y Testing</div>
+            <div class="meta">AGC / Ministerio de Trabajo · 2021</div>
+          </div>
+          <div class="course-item">
+            <div class="title">Introducción al Trabajo Informático</div>
+            <div class="meta">AGC / Ministerio de Trabajo · 2021, 36 hs</div>
+          </div>
+          <div class="course-item">
+            <div class="title">Sistema de Seguimiento de Expedientes</div>
+            <div class="meta">Dirección de Capacitación Chubut · 2021</div>
+          </div>
+          <div class="course-item">
+            <div class="title">Secretariado y Facturación de Prestaciones Médicas</div>
+            <div class="meta">INFOSSEP, Córdoba · 2020-2021, 80 hs</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <footer>
+    Actualizado 2026 · Reemplazá este texto o borrá el footer si preferís
+  </footer>
+
+</div>
+</body>
+</html>
